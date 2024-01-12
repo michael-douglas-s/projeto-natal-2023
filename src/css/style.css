@@ -1,0 +1,136 @@
+body {
+  background-image: url(../imagens/Natal-dark.jpg);
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+main .aluno {
+  display: none;
+  height: 100%;
+}
+
+main .aluno.selecionado {
+  display: block;
+}
+
+main {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+.cartao {
+  transform: translateY(-60px);
+  width: 500px;
+  height: 360px;
+  z-index: 1;
+}
+
+.noel {
+  width: 350px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.feliz-natal {
+  font-family: "Sevillana", cursive;
+  font-size: 90px;
+  -webkit-text-stroke: 1px #fff;
+  color: gold;
+  text-shadow: 0 0 100px;
+  animation: transition-color 1s ease-in-out infinite,
+    flutuacao-lateral 13s ease-in-out infinite;
+}
+
+@keyframes flutuacao-lateral {
+  0%,
+  100% {
+    transform: translate(0px, 0px);
+  }
+  50% {
+    transform: translate(60px, 40px);
+  }
+}
+
+@keyframes transition-color {
+  from {
+    top: 0px;
+    left: 0px;
+  }
+  to {
+    color: red;
+    top: 200px;
+    left: 200px;
+  }
+}
+
+.botoes {
+  position: fixed;
+  bottom: 5%;
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  justify-content: center;
+  align-items: end;
+  gap: 10px;
+}
+
+.botoes .botao {
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-radius: 50%;
+  margin: 15px;
+}
+.botoes .botao img {
+  width: 100px;
+  border-radius: 50%;
+}
+
+.botoes .botao.selecionado {
+  transform: scale(1.1);
+}
+
+.botoes .botao :hover {
+  transform: scale(1.1);
+}
+
+.neve1,
+.neve2 {
+  background: url(../imagens/snow.png);
+}
+.neve {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+}
+
+.neve1 {
+  background-size: 30em;
+  animation: snowfall 20s linear infinite;
+}
+.neve2 {
+  background-size: 40em;
+  animation: snowfall2 30s linear infinite;
+  opacity: 0.4;
+}
+@keyframes snowfall {
+  100% {
+    background-position: 70em 70em;
+  }
+}
+@keyframes snowfall2 {
+  100% {
+    background-position: 60em 22em;
+  }
+}
